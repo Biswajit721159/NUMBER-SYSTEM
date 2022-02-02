@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #hello {
+            font-size: 30px;
+            margin: 15px;
+            padding: 20px;
+            background-color: rgb(179, 231, 178);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        body {
+            background: url("roman.jpg") no-repeat;
+            background-size: cover;
+        }
+
+        button {
+            background: aquamarine;
+            margin-top: 10px;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+
+        input {
+            background-color: rgb(240, 236, 228);
+            font-size: 25px;
+            border-radius: 5px;
+        }
+
+        #first {
+            font-size: 30px;
+            margin: 15px;
+            padding: 20px;
+            background-color: rgb(82, 207, 80);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #second {
+            font-size: 30px;
+            margin: 15px;
+            padding: 20px;
+            background-color: rgb(245, 236, 244);
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 id="hello">Octal------To------Binary</h2>
+    <div id="container">
+        <div id="first">Enter the Octal Number: </div>
+        <div><input type="text" id="Binary"></div>
+        <div id="submit"><button onclick="myfun()">Submit</button></div>
+    </div>
+    <h2 id="second">The Output is: </h2>
+    <script>
+
+        function myfun() {
+            var x = document.getElementById('Binary').value;
+            var y = x.length;
+            let count = 0;
+            for (let i = 0; i < y; i++) {
+
+                if (x[i] != '0' && x[i] != '1' && x[i] != '2' && x[i] != '3' && x[i] != '4' && x[i] != '5' && x[i] != '6' && x[i] != '7' && x[i] != '8' && x[i] != '9' && x[i] != '.') {
+                    count++;
+                    break;
+                }
+            }
+            if (count == 1) {
+                document.getElementById('second').innerHTML = x + " is not a valid input";
+            }
+            else {
+                function OctToBin(octnum) {
+                    let i = 0;
+
+                    let binary = "";
+
+                    while (i < octnum.length) {
+
+                        let c = octnum[i];
+                        switch (c) {
+                            case '0':
+                                binary += "000";
+                                break;
+                            case '1':
+                                binary += "001";
+                                break;
+                            case '2':
+                                binary += "010";
+                                break;
+                            case '3':
+                                binary += "011";
+                                break;
+                            case '4':
+                                binary += "100";
+                                break;
+                            case '5':
+                                binary += "101";
+                                break;
+                            case '6':
+                                binary += "110";
+                                break;
+                            case '7':
+                                binary += "111";
+                                break;
+                            default:
+                                document.write("<br>Invalid Octal Digit " + octnum[i]);
+                                break;
+                        }
+                        i++;
+                    }
+                    return binary;
+                }
+                let octnum = x;
+                document.getElementById('hello').innerHTML = "Hay Sir  your Octal number of " + x + " is = " + OctToBin(octnum);
+            }
+        }
+    </script>
+</body>
+
+</html>

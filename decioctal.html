@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #hello {
+            font-size: 30px;
+            margin: 15px;
+            padding: 20px;
+            background-color: rgb(179, 231, 178);
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        #container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        body {
+            background: url("roman.jpg") no-repeat;
+            background-size: cover;
+        }
+
+        button {
+            background: aquamarine;
+            margin-top: 10px;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+
+        input {
+            background-color: rgb(240, 236, 228);
+            font-size: 25px;
+            border-radius: 5px;
+        }
+
+        #first {
+            font-size: 30px;
+            margin: 15px;
+            padding: 20px;
+            background-color: rgb(82, 207, 80);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #second {
+            font-size: 30px;
+            margin: 15px;
+            padding: 20px;
+            background-color: rgb(245, 236, 244);
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 id="hello">Decimal------To------Octal</h2>
+    <div id="container">
+        <div id="first">Enter the Decimal Number: </div>
+        <div><input type="text" id="Binary"></div>
+        <div><button onclick="myfun()">Submit</button></div>
+    </div>
+    <h2 id="second">The Output is: </h2>
+    <script>
+
+        function myfun() {
+            var x = document.getElementById('Binary').value;
+            let count = 0;
+            let y = x.length;
+            for (let i = 0; i < y; i++) {
+                if (x[i] != '0' && x[i] != '1' && x[i] != '2' && x[i] != '3' && x[i] != '4' && x[i] != '5' && x[i] != '6' && x[i] != '7' && x[i] != '8' && x[i] != '9' && x[i] != '.') {
+                    count++;
+                    break;
+                }
+            }
+            if (count == 1) {
+                document.getElementById('second').innerHTML = x + " is not a valid input";
+            }
+            else {
+
+                function decimaltoOctal(deciNum) {
+
+                    let octalNum = 0, countval = 1;
+                    let dNo = deciNum;
+
+                    while (deciNum != 0) {
+
+                        let remainder = Math.floor(deciNum % 8);
+                        octalNum += remainder * countval;
+                        countval = countval * 10;
+                        deciNum = Math.floor(deciNum / 8);
+                    }
+                    return octalNum;
+                }
+
+                let n = x;
+
+                document.getElementById('second').innerHTML = "The Output is: " + decimaltoOctal(n);
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>

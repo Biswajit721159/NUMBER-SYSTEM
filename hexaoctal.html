@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #hello {
+            font-size: 30px;
+            margin: 15px;
+            padding: 20px;
+            background-color: rgb(179, 231, 178);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        body {
+            background: url("roman.jpg") no-repeat;
+            background-size: cover;
+        }
+
+        button {
+            background: aquamarine;
+            margin-top: 10px;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+
+        input {
+            background-color: rgb(240, 236, 228);
+            font-size: 25px;
+            border-radius: 5px;
+        }
+
+        #first {
+            font-size: 30px;
+            margin: 15px;
+            padding: 20px;
+            background-color: rgb(82, 207, 80);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #second {
+            font-size: 30px;
+            margin: 15px;
+            padding: 20px;
+            background-color: rgb(245, 236, 244);
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 id="hello">Hexadecimal------To------Octal</h2>
+    <div id="container">
+        <div id="first">Enter the Hexadecimal Number:</div>
+        <div><input type="text" id="Binary"></div>
+        <div><button onclick="myfun()">Submit</button></div>
+        <h2 id="second">The Output is: </h2>
+    </div>
+    <script>
+
+        function myfun() {
+            var x = document.getElementById('Binary').value;
+            
+
+            
+        }
+    </script>
+</body>
+
+</html>
